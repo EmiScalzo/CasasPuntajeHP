@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900;
+  }
+}
+
+@layer components {
+  .house-cylinder {
+    @apply relative w-24 h-96 border-4 border-gray-300 rounded-t-2xl overflow-hidden bg-gray-100;
+  }
+  
+  .points-display {
+    @apply absolute inset-0 flex items-center justify-center;
+  }
+  
+  .points-value {
+    @apply text-2xl font-bold text-gray-800 bg-white/80 px-2 rounded;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-1%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+/* Ensure proper container sizing */
+#root {
+  @apply min-h-screen w-full;
+}
+
+/* Improve visibility of house names and buttons */
+.house-name {
+  @apply text-2xl font-bold drop-shadow-lg;
+}
+
+.control-button {
+  @apply shadow-md hover:shadow-lg transition-shadow;
+}
